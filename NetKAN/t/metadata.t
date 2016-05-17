@@ -55,6 +55,18 @@ foreach my $shortname (sort keys %files) {
           defined $metadata->{'version'},
           "$shortname expects a version when a download url is provided."
       );
+      ok(
+          defined $metadata->{'name'},
+          "$shortname expects a name when a download url is provided."
+      );
+      ok(
+          defined $metadata->{'abstract'},
+          "$shortname expects an abstract when a download url is provided."
+      );
+      ok(
+          defined $metadata->{'author'},
+          "$shortname expects an author when a download url is provided."
+      );
     } else {
       ok(
           $metadata->{'$kref'} || $metadata->{'$vref'},
