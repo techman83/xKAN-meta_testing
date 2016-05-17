@@ -48,12 +48,24 @@ foreach my $shortname (sort keys %files) {
 
     if ( defined $metadata->{'download'} ) {
       ok(
-          ! defined $metadata->{'$kref'} && ! defined $metadata->{'$vref'},
-          "$shortname has a \$kref/\$vref and a download field, this is likely incorrect."
+          ! defined $metadata->{'$kref'},
+          "$shortname has a \$kref and a download field, this is likely incorrect."
       );
       ok(
           defined $metadata->{'version'},
           "$shortname expects a version when a download url is provided."
+      );
+      ok(
+          defined $metadata->{'name'},
+          "$shortname expects a name when a download url is provided."
+      );
+      ok(
+          defined $metadata->{'abstract'},
+          "$shortname expects an abstract when a download url is provided."
+      );
+      ok(
+          defined $metadata->{'author'},
+          "$shortname expects an author when a download url is provided."
       );
     } else {
       ok(
