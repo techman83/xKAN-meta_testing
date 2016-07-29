@@ -192,6 +192,7 @@ inject_metadata () {
 if [ -n "$ghprbActualCommit" ]
 then
     echo "Commit hash: $ghprbActualCommit"
+    git status
     export COMMIT_CHANGES="`git diff --diff-filter=AM --name-only --stat origin/master...HEAD`"
 else
     echo "No commit provided, skipping further tests."
