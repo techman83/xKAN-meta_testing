@@ -1,0 +1,12 @@
+name: 'CKAN metadata CI'
+description: 'Test KSP-CKAN metadata in the form of .netkan or .ckan files'
+author: 'KSP-CKAN'
+inputs:
+  commit:
+    description: 'The SHA of the commit to check'
+    default: 'HEAD'
+runs:
+  using: 'docker'
+  image: 'docker://ksp-ckan/metadata-ci'
+  args:
+    - ${{ inputs.commit }}

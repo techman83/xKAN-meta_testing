@@ -1,0 +1,18 @@
+name: Validate netkans
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Check .netkan files
+        uses: KSP-CKAN/xCKAN-meta:testing
+        with:
+          commit: ${{ github.sha }}
+
