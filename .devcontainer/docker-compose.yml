@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+  ksp-ckan_metadata:
+    build:
+      context: ../.
+    volumes:
+      - ../.:/root/workspace
+    entrypoint: sleep infinity
