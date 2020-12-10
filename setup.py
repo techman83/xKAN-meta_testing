@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='metadata-testing',
+    name='MetadataTesting',
     version='0.1',
     description='Testing Library for CKAN/NetKAN Metadata',
     author='Leon Wright',
@@ -11,7 +11,6 @@ setup(
     packages=find_packages(),
     install_requires=[
         'click',
-        'git+https://github.com/KSP-CKAN/NetKAN-Infra.git#egg=pkg&subdirectory=netkan',
     ],
     extras_require={
         'development': [
